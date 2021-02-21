@@ -40,7 +40,8 @@ def delete(id):
         db.session.delete(bookmark_to_delete)
         db.session.commit()
         return redirect('/')
-    except:
+    except Exception as e:
+        print(e)
         return "There was an issue deleting your bookmark"
 
 @app.route('/update/<int:id>',methods=['POST','GET'])
@@ -53,7 +54,8 @@ def update(id):
         try:
             db.session.commit()
             return redirect('/')
-        except:
+        except Exception as e:
+            print(e)
             return "There was an issue updating your bookmark"
     else:
         return render_template('update.html', bookmark=bookmark)
