@@ -32,4 +32,4 @@ jobs:
       with:
         app-name: 'hatlink'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_86f693b1dfab419da086a87b3ce74be6 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_fd46815b81654478bbe906f01f632bfc }}
