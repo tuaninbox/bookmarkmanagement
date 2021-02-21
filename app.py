@@ -26,8 +26,9 @@ def index():
             db.session.add(new_bookmark)
             db.session.commit()
             return redirect('/')
-        except:
-            return "There was an issue adding your bookmark"
+        except Exception as e:
+            print(e)
+            return "There was an issue adding your bookmark %r" % (e)
     else:
         bookmarks = Bookmark.query.order_by(Bookmark.date_created).all()
         return render_template('index.html', bookmarks=bookmarks)
@@ -42,7 +43,7 @@ def delete(id):
         return redirect('/')
     except Exception as e:
         print(e)
-        return "There was an issue deleting your bookmark"
+        return "There was an issue deleting your bookmark: %r" % (e)
 
 @app.route('/update/<int:id>',methods=['POST','GET'])
 def update(id):
@@ -56,7 +57,7 @@ def update(id):
             return redirect('/')
         except Exception as e:
             print(e)
-            return "There was an issue updating your bookmark"
+            return "There was an issue updating your bookmark %r" % (e)
     else:
         return render_template('update.html', bookmark=bookmark)
 
