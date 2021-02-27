@@ -5,21 +5,11 @@ import os
 from datetime import datetime
 
 app = Flask(__name__)
-#client = MongoClient(os.getenv("MONGOURL"))
-client = MongoClient("mongodb://hatsecdb.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false")
+client = MongoClient(os.getenv("MONGOURL"))
 db = client.bookmarkmanagement   #Select the database
 #db.authenticate(name=os.getenv("MONGO_USERNAME"),password="os.getenv("MONGO_PASSWORD")")
-db.authenticate(name="hatsecdb",password="OyzCumiqiXZ6uA7q91PXYmnbH96vhbonPy5JUT05MMddo9tPc6naVGTECE63yUabCntRl6Ms9FEghE9daETs3g==")
 bookmarkcollection = db.bookmarkcollection #Select the collection
 
-# class Bookmark(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     name = db.Column(db.String(50), nullable=False)
-#     url = db.Column(db.String(255), nullable=False)
-#     date_created = db.Column(db.DateTime, default=datetime.utcnow)
-
-#     def __retr__(self):
-#         return '<Bookmark %r>' % self.id
 
 @app.route('/',methods=['POST','GET'])
 def index():
