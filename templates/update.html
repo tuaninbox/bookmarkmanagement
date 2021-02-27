@@ -9,9 +9,9 @@
     <h1 style="text-align: center">Update Bookmark</h1>
 
     <div class="form">
-        <form action="/update/{{bookmark.id}}" method="POST">
-            <input type="text" name="name" id="name" value="{{bookmark.name}}">
-            <input type="text" name="url" id="name" value="{{bookmark.url}}">
+        <form action="/update/{{ bookmark["_id"] }}" method="POST">
+            <input type="text" name="name" id="name" value="{{ bookmark["name"] }}">
+            <input type="text" name="url" id="name" value="{{ bookmark["url"] }}">
             <input type="submit" value="Update">
         </form>
     </div>
