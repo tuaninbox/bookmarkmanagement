@@ -20,7 +20,7 @@
         {% for bookmark in bookmarks %}
             <tr>
                 <td>{{ bookmark["name"] }}</td>
-                <td><a href="{{bookmark["url"] }} target="_blank">{{ bookmark["url"] }}</a></td>
+                <td><a href="{{bookmark["url"] }}" target="_blank">{{ bookmark["url"] }}</a></td>
                 <td>{{ bookmark["date_created"].date() }}</td>
                 <td>
                     <a href="/delete/{{bookmark["_id"]}}">Delete</a>
