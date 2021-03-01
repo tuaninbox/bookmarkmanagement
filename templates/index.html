@@ -10,7 +10,14 @@
     {% if bookmarks.count() < 1 %}
     <h4 style="text-align: center">There are no bookmark. Create one below!</h4>
     {% else %}
+    <form action="/" method="POST">
     <table>
+        <colgroup>
+            <col class="twentyfive" />
+            <col class="fifty" />
+            <col class="fifteen" />
+            <col class="ten" />
+        </colgroup>
         <tr>
             <th>Name</th>
             <th>URL</th>
@@ -29,15 +36,17 @@
                 </td>
             </tr>
         {% endfor %}
+            <tr>
+                <td>
+                    <input type="text" class="inputtd" name="name" id="name">
+                </td>
+                <td>
+                    <input type="text"  class="inputtd" name="url" id="url">
+                </td>
+                <td><input type="submit" value="Add" rowspan="2"></td>
+            </tr>
     </table>
+    </form>
     {% endif %}
-
-    <div class="form">
-        <form action="/" method="POST">
-            <input type="text" name="name" id="name">
-            <input type="text" name="url" id="url">
-            <input type="submit" value="Add">
-        </form>
-    </div>
 </div>
 {% endblock %}

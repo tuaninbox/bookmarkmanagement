@@ -13,8 +13,10 @@ table, td, th {
 }
 
 table {
-    border-collapse: collapse;
     width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: auto;
 }
 
 th {
@@ -23,7 +25,22 @@ th {
 
 td {
     text-align: center;
-    padding: 5px;
+}
+
+.ten {
+    width: 10%;
+}
+
+.fifteen {
+    width: 15%;
+}
+
+.fifty {
+    width: 50%;
+}
+
+.twentyfive {
+    width: 25%;
 }
 
 .form {
@@ -32,4 +49,9 @@ td {
 
 #content {
     width: 70%;
+}
+
+td input {
+    width: 100%;
+    box-sizing: border-box;
 }
