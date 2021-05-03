@@ -12,7 +12,7 @@ bookmarkcollection = db.bookmarkcollection #Select the collection (table)
 foldercollection = db.foldercollection 
 usercollection = db.usercollection 
 
-@app.route('/',method=['GET'])
+@app.route('/',methods=['GET'])
 def home():
     client_ip = request.access_route[0]
     output="<html>Your IP Address: {}</html>".format(client_ip.split(":")[0])
